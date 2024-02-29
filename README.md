@@ -31,9 +31,7 @@ Welcome to Spik4J, your ultimate tool to use during quizes etc. This software us
 If you have any questions, suggestions, or feedback, feel free to contact me on Discord: Dari_OS
 
 
-
 ---
-
 
 
 ***Disclaimer**: Always use Spik4J responsibly and ethically.*
