@@ -50,8 +50,6 @@ public class GPTapiHandler {
                     .header("Authorization", "Bearer " + apiKey)
                     .POST(HttpRequest.BodyPublishers.ofString(new Gson().toJson(payload)))
                     .build();
-            System.out.println(request.toString());
-            System.out.println(new Gson().toJson(messagesHistory));
             return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e.getMessage());
