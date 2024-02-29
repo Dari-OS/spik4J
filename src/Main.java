@@ -12,7 +12,8 @@ public class Main {
                 System.out.println("Please provide an api key for chatGPT:");
                 copyEventHandler.setAuthenticationKey(scanner.next());
             }
-        copyEventHandler.start();
+        //copyEventHandler.setAuthenticationKey("You API KEY");
+        //copyEventHandler.start();
 
 
 
