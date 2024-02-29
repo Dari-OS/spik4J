@@ -1,4 +1,3 @@
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -11,13 +10,12 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class AI_API {
+public class GPTapiHandler {
 
-    private static Gson gson = new Gson();
-
+    private static String apiKey = "";
 
     private static HttpClient httpClient = HttpClient.newHttpClient();
-    //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
+
 
     public static HttpResponse<String> sendREQ(String message)  {
         try {
@@ -25,13 +23,13 @@ public class AI_API {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create("https://api.openai.com/v1/chat/completions"))
                     .header("Content-Type", "application/json")
-                    .header("Authorization", "Bearer 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")
+                    .header("Authorization", "Bearer " + apiKey)
                     .POST(HttpRequest.BodyPublishers.ofString("{\n" +
                             "    \"model\": \"gpt-3.5-turbo\",\n" +
                             "    \"messages\": [\n" +
                             "      {\n" +
                             "        \"role\": \"system\",\n" +
-                            "        \"content\": \"You are a helpful assistant.\"\n" +
+                            "        \"content\": \"You are a helpful assistant. Helping with school task.\"\n" +
                             "      },\n" +
                             "      {\n" +
                             "        \"role\": \"user\",\n" +
@@ -67,8 +65,8 @@ public class AI_API {
     }
 
 
-    public static String manager(String message) {
-
+    public static String manager(String message, String apiKey) {
+        GPTapiHandler.apiKey = apiKey;
         return reqToClipboard(sendREQ(message));
     }
 }

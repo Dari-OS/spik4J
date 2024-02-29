@@ -5,23 +5,24 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 
-public class OnCopyEvent extends Thread{
+public class CopyEventHandler extends Thread{
 
 
-    private static String authenticationKey = "";
-    private static String lastContent = getClipboard();
-    private static String currentContent = getClipboard();
+    private  String authenticationKey = "";
+    private String lastContent = getClipboard();
+    private String currentContent = getClipboard();
 
     @Override
     public void run() {
+        if (authenticationKey.isEmpty()) throw new IllegalArgumentException("Please provide an authentication key for OpenAI's GPT!");
         while (true) {
             try {
                 Thread.sleep(1000);
 
                 currentContent = getClipboard();
                 if (!currentContent.equals(lastContent)) {
-                    System.out.println("test");
-                    lastContent = AI_API.manager(currentContent);
+
+                    lastContent = GPTapiHandler.manager(currentContent, authenticationKey);
                 }
 
             } catch (InterruptedException e) {
@@ -33,7 +34,7 @@ public class OnCopyEvent extends Thread{
 
     }
 
-    private static String getClipboard() {
+    private String getClipboard() {
         try {
 
             return (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
@@ -44,10 +45,15 @@ public class OnCopyEvent extends Thread{
         }
     }
 
-    private static void clearClipboard() {
+    private void clearClipboard() {
 
             Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
             clipboard.setContents(new StringSelection(""), null);
 
+    }
+
+    public  CopyEventHandler setAuthenticationKey(String authenticationKey) {
+        this.authenticationKey = authenticationKey;
+        return this;
     }
 }
