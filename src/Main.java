@@ -13,7 +13,7 @@ public class Main {
                 copyEventHandler.setAuthenticationKey(scanner.next());
             }
         //copyEventHandler.setAuthenticationKey("You API KEY");
-        //copyEventHandler.start();
+        copyEventHandler.start();
 
 
 
