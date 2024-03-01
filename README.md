@@ -22,8 +22,8 @@ Welcome to Spik4J, your ultimate tool to use during quizes etc. This software us
 
 ## Usage
 
-1. **Paste Your Question**: Copy the question you want answered and paste it into your clipboard.
-2. **Retrieve Your Answer**: Once the answer is ready, it will be automatically copied to your clipboard (this may take a moment).
+1. **Copy Your Question**: Copy the question you want answered.
+2. **Paste Your Answer**: Once the answer is ready, it will be automatically copied to your clipboard (this may take a moment).
 
 ```mermaid
 stateDiagram
