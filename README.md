@@ -1,15 +1,13 @@
 # Spik4J
 
+> [!Important]
+> You need a ChatGPT API key and
+> internet access in order to use the program
+
 ## Overview
 
 Welcome to Spik4J, your ultimate tool to use during quizes etc. This software uses the power of the ChatGPT and and your Clipboard to provide you with instant answers to your questions.
 
-
-### Prerequisites
-
-> A computer with internet access.
-> 
-> A ChatGPT authentication key.
 
 
 ## Getting Started
