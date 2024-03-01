@@ -34,8 +34,9 @@ public class CopyEventHandler extends Thread{
 
     private static String getClipboard() {
         try {
-
-            return (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+            if (Toolkit.getDefaultToolkit().getSystemClipboard().isDataFlavorAvailable(DataFlavor.stringFlavor)) {
+                return (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
+            } else return "";
 
         } catch (IOException | UnsupportedFlavorException e) {
             System.exit(-1);
