@@ -15,8 +15,8 @@ Welcome to Spik4J, your ultimate tool to use during quizes etc. This software us
 > If you run the programm by just double clicking it you may have to close it by stopping its process
 
   1. **Download Spik4J**: Visit the [releases page](https://github.com/Dari-OS/spik4J/releases) to download the latest version of Spik4J or compile the project yourself.
-  2. **Run Spik4J**: Run it via the terminal `java -jar path/spik4J.jar <api-key>`. (the api-key is optinal)
-  3. **Enter the api key** If you haven't already entered the api key you'll have to do it now.
+  2. **Run Spik4J**: Run it via the terminal `java -jar path/spik4J.jar <api-key>`. (the api-key is optional)
+  3. **Enter the api-key** If you haven't already entered the api key you'll have to do it now.
   
 
 ## Usage
