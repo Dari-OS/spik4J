@@ -6,7 +6,7 @@
 
 ## Overview
 
-Welcome to Spik4J, your ultimate tool to use during quizes etc. This software uses the power of the ChatGPT and and your Clipboard to provide you with instant answers to your questions.
+Welcome to Spik4J, your ultimate tool to use during quizes etc. This software uses the power of the ChatGPT and your Clipboard to provide you with instant answers to your questions.
 
 
 
